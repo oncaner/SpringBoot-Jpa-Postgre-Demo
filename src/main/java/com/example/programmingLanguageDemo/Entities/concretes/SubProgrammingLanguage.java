@@ -6,20 +6,23 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.List;
-
-@NoArgsConstructor
-@AllArgsConstructor
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
-@Table(name = "programming_languages")
-public class ProgrammingLanguage {
+@Table(name = "sub_programming_language")
+public class SubProgrammingLanguage {
+
     @Id
-    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    @Column(name = "id")
+    int id;
+
+    @ManyToOne
+    @JoinColumn(name = "programming_language_id")
+    ProgrammingLanguage programmingLanguage;
 
     @Column(name = "name")
-    private String name;
+    String name;
 }
