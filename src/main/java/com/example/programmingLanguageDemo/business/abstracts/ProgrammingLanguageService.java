@@ -1,11 +1,12 @@
 package com.example.programmingLanguageDemo.business.abstracts;
 
 import com.example.programmingLanguageDemo.Entities.concretes.ProgrammingLanguage;
+import com.example.programmingLanguageDemo.business.responses.GetAllProgrammingLanguagesResponse;
 
 import java.util.List;
 
 public interface ProgrammingLanguageService {
-    List<ProgrammingLanguage> getAll();
+    List<GetAllProgrammingLanguagesResponse> getAll();
 
     ProgrammingLanguage getById(int id);
 

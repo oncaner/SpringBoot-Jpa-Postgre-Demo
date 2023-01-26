@@ -2,10 +2,12 @@ package com.example.programmingLanguageDemo.business.concretes;
 
 import com.example.programmingLanguageDemo.Entities.concretes.ProgrammingLanguage;
 import com.example.programmingLanguageDemo.business.abstracts.ProgrammingLanguageService;
+import com.example.programmingLanguageDemo.business.responses.GetAllProgrammingLanguagesResponse;
 import com.example.programmingLanguageDemo.dataAccess.abstracts.ProgrammingLanguageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -19,8 +21,19 @@ public class ProgrammingLanguageManager implements ProgrammingLanguageService {
     }
 
     @Override
-    public List<ProgrammingLanguage> getAll() {
-        return programmingLanguageRepository.findAll();
+    public List<GetAllProgrammingLanguagesResponse> getAll() {
+        List<ProgrammingLanguage> programmingLanguages = programmingLanguageRepository.findAll();
+        List<GetAllProgrammingLanguagesResponse> getAllProgrammingLanguagesResponses = new ArrayList<GetAllProgrammingLanguagesResponse>();
+
+        for (ProgrammingLanguage programmingLanguage : programmingLanguages) {
+            GetAllProgrammingLanguagesResponse responseItem = new GetAllProgrammingLanguagesResponse();
+            responseItem.setId(programmingLanguage.getId());
+            responseItem.setName(programmingLanguage.getName());
+
+            getAllProgrammingLanguagesResponses.add(responseItem);
+        }
+
+        return getAllProgrammingLanguagesResponses;
     }
 
     @Override

@@ -2,6 +2,7 @@ package com.example.programmingLanguageDemo.webApi.controllers;
 
 import com.example.programmingLanguageDemo.Entities.concretes.ProgrammingLanguage;
 import com.example.programmingLanguageDemo.business.abstracts.ProgrammingLanguageService;
+import com.example.programmingLanguageDemo.business.responses.GetAllProgrammingLanguagesResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,7 +19,7 @@ public class ProgrammingLanguagesController {
     }
 
     @GetMapping("/getall")
-    public List<ProgrammingLanguage> getAll() {
+    public List<GetAllProgrammingLanguagesResponse> getAll() {
         return programmingLanguageService.getAll();
     }
 
