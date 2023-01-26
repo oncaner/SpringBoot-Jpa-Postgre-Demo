@@ -2,6 +2,7 @@ package com.example.programmingLanguageDemo.business.abstracts;
 
 import com.example.programmingLanguageDemo.Entities.concretes.ProgrammingLanguage;
 import com.example.programmingLanguageDemo.business.requests.CreateProgrammingLanguageRequest;
+import com.example.programmingLanguageDemo.business.requests.UpdateProgrammingLanguageRequest;
 import com.example.programmingLanguageDemo.business.responses.GetAllProgrammingLanguagesResponse;
 import com.example.programmingLanguageDemo.business.responses.GetByIdProgramminLanguageResponse;
 
@@ -14,7 +15,7 @@ public interface ProgrammingLanguageService {
 
     void add(CreateProgrammingLanguageRequest createProgrammingLanguageRequest);
 
-    void deleteByIdProgrammingLanguageRequest(int id);
+    void delete(int id);
 
-    void update(int id, ProgrammingLanguage newProgrammingLanguage);
+    void update(int id, UpdateProgrammingLanguageRequest updateProgrammingLanguageRequest);
 }

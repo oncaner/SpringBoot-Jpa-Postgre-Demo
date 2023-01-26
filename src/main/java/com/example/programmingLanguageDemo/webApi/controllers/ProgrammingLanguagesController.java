@@ -3,6 +3,7 @@ package com.example.programmingLanguageDemo.webApi.controllers;
 import com.example.programmingLanguageDemo.Entities.concretes.ProgrammingLanguage;
 import com.example.programmingLanguageDemo.business.abstracts.ProgrammingLanguageService;
 import com.example.programmingLanguageDemo.business.requests.CreateProgrammingLanguageRequest;
+import com.example.programmingLanguageDemo.business.requests.UpdateProgrammingLanguageRequest;
 import com.example.programmingLanguageDemo.business.responses.GetAllProgrammingLanguagesResponse;
 import com.example.programmingLanguageDemo.business.responses.GetByIdProgramminLanguageResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +14,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/programminglanguages")
 public class ProgrammingLanguagesController {
-    private ProgrammingLanguageService programmingLanguageService;
+    private final ProgrammingLanguageService programmingLanguageService;
 
     @Autowired
     public ProgrammingLanguagesController(ProgrammingLanguageService programmingLanguageService) {
@@ -36,12 +37,12 @@ public class ProgrammingLanguagesController {
     }
 
     @PutMapping("/update/{id}")
-    public void update(@PathVariable int id, @RequestBody ProgrammingLanguage programmingLanguage) {
-        programmingLanguageService.update(id, programmingLanguage);
+    public void update(@PathVariable int id, @RequestBody UpdateProgrammingLanguageRequest updateProgrammingLanguageRequest) {
+        programmingLanguageService.update(id, updateProgrammingLanguageRequest);
     }
 
     @DeleteMapping("/delete/{id}")
-    public void deleteByIdProgrammingLanguageRequest(@PathVariable int id) {
-        programmingLanguageService.deleteByIdProgrammingLanguageRequest(id);
+    public void delete(@PathVariable int id) {
+        programmingLanguageService.delete(id);
     }
 }

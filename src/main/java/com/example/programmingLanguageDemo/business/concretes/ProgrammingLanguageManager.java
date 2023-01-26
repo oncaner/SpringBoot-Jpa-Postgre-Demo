@@ -3,6 +3,7 @@ package com.example.programmingLanguageDemo.business.concretes;
 import com.example.programmingLanguageDemo.Entities.concretes.ProgrammingLanguage;
 import com.example.programmingLanguageDemo.business.abstracts.ProgrammingLanguageService;
 import com.example.programmingLanguageDemo.business.requests.CreateProgrammingLanguageRequest;
+import com.example.programmingLanguageDemo.business.requests.UpdateProgrammingLanguageRequest;
 import com.example.programmingLanguageDemo.business.responses.GetAllProgrammingLanguagesResponse;
 import com.example.programmingLanguageDemo.business.responses.GetByIdProgramminLanguageResponse;
 import com.example.programmingLanguageDemo.dataAccess.abstracts.ProgrammingLanguageRepository;
@@ -15,7 +16,7 @@ import java.util.List;
 @Service
 public class ProgrammingLanguageManager implements ProgrammingLanguageService {
 
-    private ProgrammingLanguageRepository programmingLanguageRepository;
+    private final ProgrammingLanguageRepository programmingLanguageRepository;
 
     @Autowired
     public ProgrammingLanguageManager(ProgrammingLanguageRepository programmingLanguageRepository) {
@@ -56,14 +57,14 @@ public class ProgrammingLanguageManager implements ProgrammingLanguageService {
     }
 
     @Override
-    public void deleteByIdProgrammingLanguageRequest(int id) {
+    public void delete(int id) {
         programmingLanguageRepository.deleteById(id);
     }
 
     @Override
-    public void update(int id, ProgrammingLanguage newProgrammingLanguage) {
+    public void update(int id, UpdateProgrammingLanguageRequest updateProgrammingLanguageRequest) {
         ProgrammingLanguage programmingLanguage = programmingLanguageRepository.findById(id).get();
-        programmingLanguage.setName(newProgrammingLanguage.getName());
-        programmingLanguageRepository.save(newProgrammingLanguage);
+        programmingLanguage.setName(updateProgrammingLanguageRequest.getName());
+        programmingLanguageRepository.save(programmingLanguage);
     }
 }
