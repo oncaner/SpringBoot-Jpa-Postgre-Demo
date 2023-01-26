@@ -2,7 +2,9 @@ package com.example.programmingLanguageDemo.webApi.controllers;
 
 import com.example.programmingLanguageDemo.Entities.concretes.ProgrammingLanguage;
 import com.example.programmingLanguageDemo.business.abstracts.ProgrammingLanguageService;
+import com.example.programmingLanguageDemo.business.requests.CreateProgrammingLanguageRequest;
 import com.example.programmingLanguageDemo.business.responses.GetAllProgrammingLanguagesResponse;
+import com.example.programmingLanguageDemo.business.responses.GetByIdProgramminLanguageResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,13 +26,13 @@ public class ProgrammingLanguagesController {
     }
 
     @GetMapping("/getbyid/{id}")
-    public ProgrammingLanguage getById(@PathVariable int id) {
+    public GetByIdProgramminLanguageResponse getById(@PathVariable int id) {
         return programmingLanguageService.getById(id);
     }
 
     @PostMapping("/add")
-    public void add(@RequestBody ProgrammingLanguage programmingLanguage) {
-        programmingLanguageService.add(programmingLanguage);
+    public void add(@RequestBody CreateProgrammingLanguageRequest createProgrammingLanguageRequest) {
+        programmingLanguageService.add(createProgrammingLanguageRequest);
     }
 
     @PutMapping("/update/{id}")
