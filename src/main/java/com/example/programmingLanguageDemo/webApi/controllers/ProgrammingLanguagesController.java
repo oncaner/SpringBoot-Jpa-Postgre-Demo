@@ -41,7 +41,7 @@ public class ProgrammingLanguagesController {
     }
 
     @DeleteMapping("/delete/{id}")
-    public void delete(@PathVariable int id) {
-        programmingLanguageService.delete(id);
+    public void deleteByIdProgrammingLanguageRequest(@PathVariable int id) {
+        programmingLanguageService.deleteByIdProgrammingLanguageRequest(id);
     }
 }

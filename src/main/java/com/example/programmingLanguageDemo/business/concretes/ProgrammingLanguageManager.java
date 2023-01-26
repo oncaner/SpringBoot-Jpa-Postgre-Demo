@@ -56,7 +56,7 @@ public class ProgrammingLanguageManager implements ProgrammingLanguageService {
     }
 
     @Override
-    public void delete(int id) {
+    public void deleteByIdProgrammingLanguageRequest(int id) {
         programmingLanguageRepository.deleteById(id);
     }
 
