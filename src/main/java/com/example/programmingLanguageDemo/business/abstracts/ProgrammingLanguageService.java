@@ -9,13 +9,13 @@ import com.example.programmingLanguageDemo.business.responses.GetByIdProgramminL
 import java.util.List;
 
 public interface ProgrammingLanguageService {
-    List<GetAllProgrammingLanguagesResponse> getAll();
+    List<GetAllProgrammingLanguagesResponse> getAllProgrammingLanguages();
 
-    GetByIdProgramminLanguageResponse getById(int id);
+    GetByIdProgramminLanguageResponse getProgrammingLanguageById(int id);
 
-    void add(CreateProgrammingLanguageRequest createProgrammingLanguageRequest);
+    void createProgrammingLanguage(CreateProgrammingLanguageRequest createProgrammingLanguageRequest);
 
-    void delete(int id);
+    void deleteProgrammingLanguage(int id);
 
-    void update(int id, UpdateProgrammingLanguageRequest updateProgrammingLanguageRequest);
+    void updateProgrammingLanguage(int id, UpdateProgrammingLanguageRequest updateProgrammingLanguageRequest);
 }

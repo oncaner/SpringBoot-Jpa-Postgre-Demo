@@ -1,6 +1,5 @@
 package com.example.programmingLanguageDemo.webApi.controllers;
 
-import com.example.programmingLanguageDemo.Entities.concretes.ProgrammingLanguage;
 import com.example.programmingLanguageDemo.business.abstracts.ProgrammingLanguageService;
 import com.example.programmingLanguageDemo.business.requests.CreateProgrammingLanguageRequest;
 import com.example.programmingLanguageDemo.business.requests.UpdateProgrammingLanguageRequest;
@@ -22,27 +21,27 @@ public class ProgrammingLanguagesController {
     }
 
     @GetMapping("/getall")
-    public List<GetAllProgrammingLanguagesResponse> getAll() {
-        return programmingLanguageService.getAll();
+    public List<GetAllProgrammingLanguagesResponse> getAllProgrammingLanguages() {
+        return programmingLanguageService.getAllProgrammingLanguages();
     }
 
     @GetMapping("/getbyid/{id}")
-    public GetByIdProgramminLanguageResponse getById(@PathVariable int id) {
-        return programmingLanguageService.getById(id);
+    public GetByIdProgramminLanguageResponse getProgrammingLanguageById(@PathVariable int id) {
+        return programmingLanguageService.getProgrammingLanguageById(id);
     }
 
     @PostMapping("/add")
-    public void add(@RequestBody CreateProgrammingLanguageRequest createProgrammingLanguageRequest) {
-        programmingLanguageService.add(createProgrammingLanguageRequest);
+    public void createProgrammingLanguage(@RequestBody CreateProgrammingLanguageRequest createProgrammingLanguageRequest) {
+        programmingLanguageService.createProgrammingLanguage(createProgrammingLanguageRequest);
     }
 
     @PutMapping("/update/{id}")
-    public void update(@PathVariable int id, @RequestBody UpdateProgrammingLanguageRequest updateProgrammingLanguageRequest) {
-        programmingLanguageService.update(id, updateProgrammingLanguageRequest);
+    public void updateProgrammingLanguage(@PathVariable int id, @RequestBody UpdateProgrammingLanguageRequest updateProgrammingLanguageRequest) {
+        programmingLanguageService.updateProgrammingLanguage(id, updateProgrammingLanguageRequest);
     }
 
     @DeleteMapping("/delete/{id}")
-    public void delete(@PathVariable int id) {
-        programmingLanguageService.delete(id);
+    public void deleteProgrammingLanguage(@PathVariable int id) {
+        programmingLanguageService.deleteProgrammingLanguage(id);
     }
 }

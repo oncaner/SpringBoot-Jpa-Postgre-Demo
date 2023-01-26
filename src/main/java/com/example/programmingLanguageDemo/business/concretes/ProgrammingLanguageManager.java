@@ -24,7 +24,7 @@ public class ProgrammingLanguageManager implements ProgrammingLanguageService {
     }
 
     @Override
-    public List<GetAllProgrammingLanguagesResponse> getAll() {
+    public List<GetAllProgrammingLanguagesResponse> getAllProgrammingLanguages() {
         List<ProgrammingLanguage> programmingLanguages = programmingLanguageRepository.findAll();
         List<GetAllProgrammingLanguagesResponse> getAllProgrammingLanguagesResponses = new ArrayList<GetAllProgrammingLanguagesResponse>();
 
@@ -40,7 +40,7 @@ public class ProgrammingLanguageManager implements ProgrammingLanguageService {
     }
 
     @Override
-    public GetByIdProgramminLanguageResponse getById(int id) {
+    public GetByIdProgramminLanguageResponse getProgrammingLanguageById(int id) {
 
         ProgrammingLanguage programmingLanguage = programmingLanguageRepository.findById(id).get();
         GetByIdProgramminLanguageResponse responseItem = new GetByIdProgramminLanguageResponse();
@@ -50,19 +50,19 @@ public class ProgrammingLanguageManager implements ProgrammingLanguageService {
     }
 
     @Override
-    public void add(CreateProgrammingLanguageRequest createProgrammingLanguageRequest) {
+    public void createProgrammingLanguage(CreateProgrammingLanguageRequest createProgrammingLanguageRequest) {
         ProgrammingLanguage programmingLanguage = new ProgrammingLanguage();
         programmingLanguage.setName(createProgrammingLanguageRequest.getName());
         programmingLanguageRepository.save(programmingLanguage);
     }
 
     @Override
-    public void delete(int id) {
+    public void deleteProgrammingLanguage(int id) {
         programmingLanguageRepository.deleteById(id);
     }
 
     @Override
-    public void update(int id, UpdateProgrammingLanguageRequest updateProgrammingLanguageRequest) {
+    public void updateProgrammingLanguage(int id, UpdateProgrammingLanguageRequest updateProgrammingLanguageRequest) {
         ProgrammingLanguage programmingLanguage = programmingLanguageRepository.findById(id).get();
         programmingLanguage.setName(updateProgrammingLanguageRequest.getName());
         programmingLanguageRepository.save(programmingLanguage);
