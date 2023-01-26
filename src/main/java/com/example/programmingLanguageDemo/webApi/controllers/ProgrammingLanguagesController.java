@@ -2,6 +2,7 @@ package com.example.programmingLanguageDemo.webApi.controllers;
 
 import com.example.programmingLanguageDemo.Entities.concretes.ProgrammingLanguage;
 import com.example.programmingLanguageDemo.business.abstracts.ProgrammingLanguageService;
+import com.example.programmingLanguageDemo.business.requests.CreateProgrammingLanguageRequest;
 import com.example.programmingLanguageDemo.business.responses.GetAllProgrammingLanguagesResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -29,8 +30,8 @@ public class ProgrammingLanguagesController {
     }
 
     @PostMapping("/add")
-    public void add(@RequestBody ProgrammingLanguage programmingLanguage) {
-        programmingLanguageService.add(programmingLanguage);
+    public void add(@RequestBody CreateProgrammingLanguageRequest createProgrammingLanguageRequest) {
+        programmingLanguageService.add(createProgrammingLanguageRequest);
     }
 
     @PutMapping("/update/{id}")
