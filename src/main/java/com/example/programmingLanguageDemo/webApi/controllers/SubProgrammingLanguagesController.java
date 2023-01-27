@@ -21,18 +21,23 @@ public class SubProgrammingLanguagesController {
         this.subProgrammingLanguageService = subProgrammingLanguageService;
     }
 
-    @GetMapping("/getallsub")
+    @GetMapping("/getall")
     public List<GetAllSubProgrammingLanguageResponse> getAllSubProgrammingLanguages() {
         return subProgrammingLanguageService.getAllSubProgrammingLanguages();
     }
 
-    @GetMapping("/getbyidsub/{id}")
+    @GetMapping("/getbyid/{id}")
     public GetByIdSubProgrammingLanguageResponse subProgrammingLanguageResponse(@PathVariable int id) {
         return subProgrammingLanguageService.getSubProgrammingLanguageById(id);
     }
 
-    @PostMapping("/addsublanguage")
-    public void add(CreateSubProgrammingLanguageRequest createSubProgrammingLanguageRequest){
+    @PostMapping("/add")
+    public void add(CreateSubProgrammingLanguageRequest createSubProgrammingLanguageRequest) {
         subProgrammingLanguageService.createSubProgrammingLanguage(createSubProgrammingLanguageRequest);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public void delete(@PathVariable int id) {
+        subProgrammingLanguageService.deleteSubProgrammingLanguage(id);
     }
 }
