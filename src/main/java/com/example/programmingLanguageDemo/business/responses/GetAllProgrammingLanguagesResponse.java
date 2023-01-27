@@ -10,7 +10,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class GetAllProgrammingLanguagesResponse {
-    int id;
-    String name;
+    private int id;
+    private String name;
 
 }

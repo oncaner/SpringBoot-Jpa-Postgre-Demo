@@ -3,6 +3,7 @@ package com.example.programmingLanguageDemo.webApi.controllers;
 import com.example.programmingLanguageDemo.Entities.concretes.SubProgrammingLanguage;
 import com.example.programmingLanguageDemo.business.abstracts.SubProgrammingLanguageService;
 import com.example.programmingLanguageDemo.business.requests.CreateSubProgrammingLanguageRequest;
+import com.example.programmingLanguageDemo.business.requests.UpdateSubProgrammingLanguageRequest;
 import com.example.programmingLanguageDemo.business.responses.GetAllSubProgrammingLanguageResponse;
 import com.example.programmingLanguageDemo.business.responses.GetByIdSubProgrammingLanguageResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,5 +40,10 @@ public class SubProgrammingLanguagesController {
     @DeleteMapping("/delete/{id}")
     public void delete(@PathVariable int id) {
         subProgrammingLanguageService.deleteSubProgrammingLanguage(id);
+    }
+
+    @PutMapping("update/{id}")
+    public void update(@PathVariable int id, @RequestBody UpdateSubProgrammingLanguageRequest updateSubProgrammingLanguageRequest) {
+        subProgrammingLanguageService.updateSubProgrammingLanguage(id, updateSubProgrammingLanguageRequest);
     }
 }

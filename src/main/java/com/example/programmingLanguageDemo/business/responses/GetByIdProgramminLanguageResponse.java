@@ -11,7 +11,7 @@ import lombok.Setter;
 @AllArgsConstructor
 public class GetByIdProgramminLanguageResponse {
 
-    int id;
-    String name;
+    private int id;
+    private String name;
 
 }

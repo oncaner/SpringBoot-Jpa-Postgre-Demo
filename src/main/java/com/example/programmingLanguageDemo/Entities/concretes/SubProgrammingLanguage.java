@@ -19,13 +19,13 @@ public class SubProgrammingLanguage {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    int id;
+    private int id;
 
     @ManyToOne
     @JoinColumn(name = "programming_language_id")
     @OnDelete(action = OnDeleteAction.CASCADE)
-    ProgrammingLanguage programmingLanguage;
+    private ProgrammingLanguage programmingLanguage;
 
     @Column(name = "name")
-    String name;
+    private String name;
 }

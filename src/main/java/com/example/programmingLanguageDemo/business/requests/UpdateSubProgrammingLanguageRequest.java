@@ -9,7 +9,6 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class CreateSubProgrammingLanguageRequest {
+public class UpdateSubProgrammingLanguageRequest {
     private String name;
-    private int programmingLanguageId;
 }

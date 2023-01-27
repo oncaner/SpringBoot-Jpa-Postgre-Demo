@@ -5,6 +5,7 @@ import com.example.programmingLanguageDemo.Entities.concretes.SubProgrammingLang
 import com.example.programmingLanguageDemo.business.abstracts.ProgrammingLanguageService;
 import com.example.programmingLanguageDemo.business.abstracts.SubProgrammingLanguageService;
 import com.example.programmingLanguageDemo.business.requests.CreateSubProgrammingLanguageRequest;
+import com.example.programmingLanguageDemo.business.requests.UpdateSubProgrammingLanguageRequest;
 import com.example.programmingLanguageDemo.business.responses.GetAllProgrammingLanguagesResponse;
 import com.example.programmingLanguageDemo.business.responses.GetAllSubProgrammingLanguageResponse;
 import com.example.programmingLanguageDemo.business.responses.GetByIdProgramminLanguageResponse;
@@ -77,7 +78,10 @@ public class SubProgrammingLanguageManager implements SubProgrammingLanguageServ
     }
 
     @Override
-    public void updateSubProgrammingLanguage(int id, SubProgrammingLanguage subProgrammingLanguage) {
+    public void updateSubProgrammingLanguage(int id, UpdateSubProgrammingLanguageRequest updateSubProgrammingLanguageRequest) {
+        SubProgrammingLanguage subProgrammingLanguage =  subProgrammingLanguageRepository.findById(id).get();
+        subProgrammingLanguage.setName(updateSubProgrammingLanguageRequest.getName());
 
+        subProgrammingLanguageRepository.save(subProgrammingLanguage);
     }
 }

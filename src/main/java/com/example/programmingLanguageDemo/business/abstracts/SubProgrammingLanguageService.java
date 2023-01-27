@@ -4,6 +4,7 @@ import com.example.programmingLanguageDemo.Entities.concretes.SubProgrammingLang
 import com.example.programmingLanguageDemo.business.requests.CreateProgrammingLanguageRequest;
 import com.example.programmingLanguageDemo.business.requests.CreateSubProgrammingLanguageRequest;
 import com.example.programmingLanguageDemo.business.requests.UpdateProgrammingLanguageRequest;
+import com.example.programmingLanguageDemo.business.requests.UpdateSubProgrammingLanguageRequest;
 import com.example.programmingLanguageDemo.business.responses.GetAllProgrammingLanguagesResponse;
 import com.example.programmingLanguageDemo.business.responses.GetAllSubProgrammingLanguageResponse;
 import com.example.programmingLanguageDemo.business.responses.GetByIdProgramminLanguageResponse;
@@ -20,5 +21,5 @@ public interface SubProgrammingLanguageService {
 
     void deleteSubProgrammingLanguage(int id);
 
-    void updateSubProgrammingLanguage(int id, SubProgrammingLanguage subProgrammingLanguage);
+    void updateSubProgrammingLanguage(int id, UpdateSubProgrammingLanguageRequest updateSubProgrammingLanguageRequest);
 }
