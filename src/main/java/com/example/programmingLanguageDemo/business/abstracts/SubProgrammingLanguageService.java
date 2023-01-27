@@ -2,6 +2,7 @@ package com.example.programmingLanguageDemo.business.abstracts;
 
 import com.example.programmingLanguageDemo.Entities.concretes.SubProgrammingLanguage;
 import com.example.programmingLanguageDemo.business.requests.CreateProgrammingLanguageRequest;
+import com.example.programmingLanguageDemo.business.requests.CreateSubProgrammingLanguageRequest;
 import com.example.programmingLanguageDemo.business.requests.UpdateProgrammingLanguageRequest;
 import com.example.programmingLanguageDemo.business.responses.GetAllProgrammingLanguagesResponse;
 import com.example.programmingLanguageDemo.business.responses.GetAllSubProgrammingLanguageResponse;
@@ -15,7 +16,7 @@ public interface SubProgrammingLanguageService {
 
     GetByIdSubProgrammingLanguageResponse getSubProgrammingLanguageById(int id);
 
-    void createSubProgrammingLanguage(SubProgrammingLanguage subProgrammingLanguage);
+    void createSubProgrammingLanguage(CreateSubProgrammingLanguageRequest createSubProgrammingLanguageRequest);
 
     void deleteSubProgrammingLanguage(int id);
 

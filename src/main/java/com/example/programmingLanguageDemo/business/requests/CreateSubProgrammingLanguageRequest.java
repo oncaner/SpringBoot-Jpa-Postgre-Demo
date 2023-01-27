@@ -1,4 +1,4 @@
-package com.example.programmingLanguageDemo.business.responses;
+package com.example.programmingLanguageDemo.business.requests;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,9 +9,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class GetByIdProgramminLanguageResponse {
-
-    int id;
+public class CreateSubProgrammingLanguageRequest {
     String name;
-
+    int programmingLanguageId;
 }

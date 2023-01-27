@@ -45,6 +45,7 @@ public class ProgrammingLanguageManager implements ProgrammingLanguageService {
         ProgrammingLanguage programmingLanguage = programmingLanguageRepository.findById(id).get();
         GetByIdProgramminLanguageResponse responseItem = new GetByIdProgramminLanguageResponse();
         responseItem.setName(programmingLanguage.getName());
+        responseItem.setId(programmingLanguage.getId());
 
         return responseItem;
     }

@@ -13,4 +13,6 @@ import lombok.Setter;
 public class GetAllSubProgrammingLanguageResponse {
     private int id;
     private String name;
+
+    private String programmingLanguageName;
 }

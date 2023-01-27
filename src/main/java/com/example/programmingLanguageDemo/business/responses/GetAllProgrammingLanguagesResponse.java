@@ -12,4 +12,5 @@ import lombok.Setter;
 public class GetAllProgrammingLanguagesResponse {
     int id;
     String name;
+
 }

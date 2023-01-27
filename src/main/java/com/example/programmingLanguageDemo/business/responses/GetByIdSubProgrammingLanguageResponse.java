@@ -10,5 +10,6 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class GetByIdSubProgrammingLanguageResponse {
-    String name;
+    private String name;
+    private String programmingLanguageName;
 }
